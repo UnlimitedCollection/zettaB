@@ -86,7 +86,12 @@
 }
 
 .navLink:hover {
-    color: white;
+    background: linear-gradient(to right, var(--pk-color-primary), #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Needed for some browsers to honor text-fill-color transparent */
 }
 
 .actions {
