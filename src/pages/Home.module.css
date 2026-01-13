@@ -217,13 +217,38 @@
     box-shadow: 0 0 40px -10px rgba(19, 91, 236, 0.3);
 }
 
+/* Data Beam Animation */
 .connectionSvg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.4;
+    z-index: 15;
+}
+
+.beamPath {
+    stroke-dasharray: 10, 1000;
+    /* Short beam, long gap */
+    stroke-dashoffset: 1000;
+    animation: beamFlow 3s linear infinite;
+    filter: drop-shadow(0 0 5px #3b82f6);
+}
+
+.beamPath2 {
+    animation-delay: 1.5s;
+    animation-duration: 4s;
+}
+
+.beamPath3 {
+    animation-delay: 0.5s;
+    animation-duration: 2.5s;
+}
+
+@keyframes beamFlow {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 /* Problem Section */
@@ -412,6 +437,31 @@
     padding: 1px;
     border-radius: var(--pk-radius-xl);
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.workflowBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+    transform: rotate(30deg);
+    animation: shineBeam 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shineBeam {
+    0% {
+        transform: rotate(30deg) translate(-100%, 0);
+    }
+
+    100% {
+        transform: rotate(30deg) translate(100%, 0);
+    }
 }
 
 .workflowInner {

@@ -95,14 +95,23 @@ export const Home: React.FC = () => {
                             </motion.div>
 
                             {/* Connecting Lines SVG */}
+                            {/* Connecting Lines SVG */}
                             <svg className={styles.connectionSvg} viewBox="0 0 600 600">
-                                <path d="M100,400 Q250,300 400,200" fill="none" stroke="url(#lineGradient)" strokeDasharray="5,5" strokeWidth="2" />
-                                <path d="M300,300 L500,150" fill="none" stroke="url(#lineGradient)" strokeWidth="1" />
+                                {/* Faint Track Lines */}
+                                <path d="M100,400 Q250,300 400,200" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" strokeDasharray="5,5" />
+                                <path d="M300,300 L500,150" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="5,5" />
+                                <path d="M100,250 L300,300" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="5,5" />
+
+                                {/* Animated Beams */}
+                                <path className={styles.beamPath} d="M100,400 Q250,300 400,200" fill="none" stroke="url(#lineGradient)" strokeWidth="3" strokeLinecap="round" />
+                                <path className={`${styles.beamPath} ${styles.beamPath2}`} d="M300,300 L500,150" fill="none" stroke="url(#lineGradient)" strokeWidth="2" strokeLinecap="round" />
+                                <path className={`${styles.beamPath} ${styles.beamPath3}`} d="M100,250 L300,300" fill="none" stroke="url(#lineGradient)" strokeWidth="2" strokeLinecap="round" />
+
                                 <defs>
                                     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                                         <stop offset="0%" stopColor="#135bec" stopOpacity="0" />
-                                        <stop offset="50%" stopColor="#135bec" stopOpacity="1" />
-                                        <stop offset="100%" stopColor="#135bec" stopOpacity="0" />
+                                        <stop offset="50%" stopColor="#3b82f6" stopOpacity="1" />
+                                        <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
                                     </linearGradient>
                                 </defs>
                             </svg>
