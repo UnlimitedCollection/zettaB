@@ -153,7 +153,7 @@
 
 /* Why Work Here */
 .whySection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     max-width: 80rem;
     margin: 0 auto;
 }
@@ -272,7 +272,7 @@
 
 /* Growth Framework */
 .growthSection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     background-color: var(--pk-color-background-dark);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
@@ -368,7 +368,7 @@
 
 /* Call to Action */
 .ctaSection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     background: linear-gradient(to bottom, var(--pk-color-background-dark), #0B0F17);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }

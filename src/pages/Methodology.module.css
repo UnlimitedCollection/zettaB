@@ -90,7 +90,7 @@
 
 /* Framework Header */
 .frameworkHeader {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     max-width: 80rem;
     margin: 0 auto;
     border-bottom: 1px solid rgba(40, 46, 57, 1);
@@ -130,7 +130,7 @@
 
 /* Stages Grid */
 .stagesSection {
-    padding: 0 1.5rem 8rem;
+    padding: 0 2rem 8rem;
     max-width: 80rem;
     margin: 0 auto;
     position: relative;
@@ -307,7 +307,7 @@
 
 /* Why It Works */
 .whySection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     max-width: 75rem;
     margin: 0 auto;
     border-top: 1px solid rgba(40, 46, 57, 0.5);
@@ -442,7 +442,7 @@
 .footerSection {
     border-top: 1px solid rgba(40, 46, 57, 1);
     background-color: #0d0f14;
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     text-align: center;
 }
 

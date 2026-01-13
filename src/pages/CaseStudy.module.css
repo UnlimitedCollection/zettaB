@@ -109,7 +109,7 @@
 
 /* Challenge Section */
 .challengeSection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     max-width: 80rem;
     margin: 0 auto;
     display: grid;
@@ -199,7 +199,7 @@
 /* Pivot Section */
 .pivotSection {
     background-color: #0e1116;
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -276,7 +276,7 @@
 
 /* Deep Dive */
 .deepDiveSection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     max-width: 80rem;
     margin: 0 auto;
     display: grid;
@@ -329,7 +329,7 @@
 /* Impact */
 .impactSection {
     background-color: var(--pk-color-surface-dark);
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -372,7 +372,7 @@
 
 /* Testimonial */
 .testSection {
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
 }
 
 .quoteCard {
