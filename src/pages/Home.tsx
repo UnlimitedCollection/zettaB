@@ -206,20 +206,74 @@ export const Home: React.FC = () => {
 
                 <div className={styles.ecosystemGrid}>
                     {[
-                        { title: 'Strategy & Consulting', desc: 'Aligning technology investments with tangible business goals to ensure ROI from day one.', icon: 'lightbulb', color: 'primary' },
-                        { title: 'UI/UX Design', desc: 'Crafting intuitive, premium user experiences that convert visitors into loyal advocates.', icon: 'brush', color: 'purple' },
-                        { title: 'Web & Mobile Engineering', desc: 'Building robust, scalable applications using cutting-edge frameworks and clean code.', icon: 'terminal', color: 'blue', span: 2 },
-                        { title: 'Cloud & DevOps', desc: 'Automating infrastructure for reliability, security, and infinite scalability.', icon: 'cloud_upload', color: 'cyan' },
-                        { title: 'Growth & Optimization', desc: 'Data-driven iteration for maximum ROI. We analyze user behavior to constantly improve performance.', icon: 'monitoring', color: 'emerald', span: 2 }
+                        {
+                            title: 'Strategy & Consulting',
+                            desc: 'Aligning technology investments with tangible business goals to ensure ROI from day one.',
+                            icon: 'lightbulb',
+                            color: 'primary',
+                            subItems: ['Digital Transformation', 'Tech Stack Audits']
+                        },
+                        {
+                            title: 'UI/UX Design',
+                            desc: 'Crafting intuitive, premium user experiences that convert visitors into loyal advocates.',
+                            icon: 'brush',
+                            color: 'purple',
+                            subItems: ['Product Design', 'Design Systems']
+                        },
+                        {
+                            title: 'Web & Mobile Engineering',
+                            desc: 'Building robust, scalable applications using cutting-edge frameworks and clean code.',
+                            icon: 'terminal',
+                            color: 'blue',
+                            subItems: ['Full Stack Development', 'Native & Cross-Platform']
+                        },
+                        {
+                            title: 'Cloud & DevOps',
+                            desc: 'Automating infrastructure for reliability, security, and infinite scalability.',
+                            icon: 'cloud_upload',
+                            color: 'cyan'
+                        },
+                        {
+                            title: 'Growth & Optimization',
+                            desc: 'Data-driven iteration for maximum ROI. We analyze user behavior to constantly improve performance.',
+                            icon: 'monitoring',
+                            color: 'emerald',
+                            span: 2,
+                            hasChart: true
+                        }
                     ].map((item, idx) => (
                         <div key={idx} className={`${styles.ecoCard} ${item.span ? styles.colSpan2 : ''}`}>
                             <div className={styles.ecoHoverGradient}></div>
-                            <div className={styles.ecoContent}>
-                                <div className={styles.ecoIcon} style={{ color: item.color === 'primary' ? 'var(--pk-color-primary)' : item.color === 'purple' ? '#a855f7' : '#3b82f6' }}>
-                                    <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>{item.icon}</span>
+                            <div className={styles.ecoContentWrapper}>
+                                <div className={styles.ecoContent}>
+                                    <div className={styles.ecoIcon} style={{ color: item.color === 'primary' ? 'var(--pk-color-primary)' : item.color === 'purple' ? '#a855f7' : item.color === 'cyan' ? '#06b6d4' : item.color === 'emerald' ? '#10b981' : '#3b82f6' }}>
+                                        <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>{item.icon}</span>
+                                    </div>
+                                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                                    <p className={styles.cardText} style={{ marginBottom: item.subItems ? '2rem' : 0 }}>{item.desc}</p>
+
+                                    {item.subItems && (
+                                        <ul className={styles.ecoList}>
+                                            {item.subItems.map((sub, sIdx) => (
+                                                <li key={sIdx} className={styles.ecoListItem}>
+                                                    <span className={styles.bullet}>•</span> {sub}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
-                                <h3 className={styles.cardTitle}>{item.title}</h3>
-                                <p className={styles.cardText} style={{ marginBottom: 0 }}>{item.desc}</p>
+
+                                {item.hasChart && (
+                                    <div className={styles.chartVisual}>
+                                        <div className={styles.chartContainer}>
+                                            <div className={styles.chartBar} style={{ height: '30%', animationDelay: '0ms' }} />
+                                            <div className={styles.chartBar} style={{ height: '45%', animationDelay: '100ms' }} />
+                                            <div className={styles.chartBar} style={{ height: '35%', animationDelay: '200ms' }} />
+                                            <div className={styles.chartBar} style={{ height: '60%', animationDelay: '300ms' }} />
+                                            <div className={styles.chartBar} style={{ height: '80%', animationDelay: '400ms' }} />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
