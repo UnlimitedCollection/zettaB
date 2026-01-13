@@ -13,11 +13,14 @@ import { ArticleDetail } from './pages/ArticleDetail';
 import { Careers } from './pages/Careers';
 import { Contact } from './pages/Contact';
 
+import { CustomCursor } from './components/CustomCursor/CustomCursor';
+
 function App() {
   const location = useLocation();
 
   return (
     <Layout>
+      <CustomCursor />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />

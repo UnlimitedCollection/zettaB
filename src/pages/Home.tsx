@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button';
-import { Card } from '../components/Card/Card';
 import { SpotlightCard } from '../components/SpotlightCard/SpotlightCard';
 import { InfiniteMarquee } from '../components/InfiniteMarquee/InfiniteMarquee';
 import styles from './Home.module.css';
