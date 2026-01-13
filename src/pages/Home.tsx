@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button';
 import { Card } from '../components/Card/Card';
+import { SpotlightCard } from '../components/SpotlightCard/SpotlightCard';
+import { InfiniteMarquee } from '../components/InfiniteMarquee/InfiniteMarquee';
 import styles from './Home.module.css';
 
 export const Home: React.FC = () => {
@@ -136,17 +138,17 @@ export const Home: React.FC = () => {
                         { icon: 'trending_down', title: 'Scalability Issues', desc: 'Rigid legacy architecture that crumbles under high user load, resulting in downtime during critical growth.' },
                         { icon: 'speed', title: 'Slow Velocity', desc: 'Bloated engineering cycles that lag behind market demands, causing you to miss opportunities.' }
                     ].map((item, index) => (
-                        <Card
+                        <SpotlightCard
                             key={index}
-                            hoverEffect
                             className={styles.problemCard}
+                            spotlightColor="rgba(239, 68, 68, 0.15)"
                         >
                             <div className={styles.cardIcon}>
                                 <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>{item.icon}</span>
                             </div>
                             <h3 className={styles.cardTitle}>{item.title}</h3>
                             <p className={styles.cardText}>{item.desc}</p>
-                        </Card>
+                        </SpotlightCard>
                     ))}
                 </div>
             </section>
@@ -248,8 +250,11 @@ export const Home: React.FC = () => {
                             hasChart: true
                         }
                     ].map((item, idx) => (
-                        <div key={idx} className={`${styles.ecoCard} ${item.span ? styles.colSpan2 : ''}`}>
-                            <div className={styles.ecoHoverGradient}></div>
+                        <SpotlightCard
+                            key={idx}
+                            className={`${styles.ecoCard} ${item.span ? styles.colSpan2 : ''}`}
+                            spotlightColor={item.color === 'primary' ? 'rgba(19, 91, 236, 0.2)' : item.color === 'purple' ? 'rgba(168, 85, 247, 0.2)' : 'rgba(59, 130, 246, 0.2)'}
+                        >
                             <div className={styles.ecoContentWrapper}>
                                 <div className={styles.ecoContent}>
                                     <div className={styles.ecoIcon} style={{ color: item.color === 'primary' ? 'var(--pk-color-primary)' : item.color === 'purple' ? '#a855f7' : item.color === 'cyan' ? '#06b6d4' : item.color === 'emerald' ? '#10b981' : '#3b82f6' }}>
@@ -281,7 +286,7 @@ export const Home: React.FC = () => {
                                     </div>
                                 )}
                             </div>
-                        </div>
+                        </SpotlightCard>
                     ))}
                 </div>
             </section>
@@ -311,6 +316,15 @@ export const Home: React.FC = () => {
                                 <div className={styles.statLabel}>{stat.label}</div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className={styles.marqueeSection}>
+                        <p className={styles.marqueeLabel}>Trusted Technologies</p>
+                        <InfiniteMarquee speed={30}>
+                            {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Figma'].map((tech, i) => (
+                                <span key={i} className={styles.techTag}>{tech}</span>
+                            ))}
+                        </InfiniteMarquee>
                     </div>
                 </div>
             </section>

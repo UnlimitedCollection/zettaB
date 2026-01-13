@@ -1,0 +1,27 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--pk-color-surface-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--pk-radius-2xl);
+    padding: var(--pk-spacing-8);
+    transition: transform 300ms var(--pk-ease-out), border-color 300ms;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 300ms;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+}
