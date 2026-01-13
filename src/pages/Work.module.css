@@ -2,6 +2,8 @@
     padding-top: 5rem;
     min-height: 100vh;
     background-color: var(--pk-color-background-dark);
+    position: relative;
+    z-index: 1;
 }
 
 /* Hero */
