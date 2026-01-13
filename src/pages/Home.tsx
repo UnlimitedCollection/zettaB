@@ -1,6 +1,7 @@
 /* ... Previous content is imported ... */
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button';
 import { Card } from '../components/Card/Card';
 import styles from './Home.module.css';
@@ -36,12 +37,16 @@ export const Home: React.FC = () => {
                         </p>
 
                         <div className={styles.heroActions}>
-                            <Button variant="primary" size="lg" rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}>
-                                Start a Conversation
-                            </Button>
-                            <Button variant="secondary" size="lg">
-                                See How We Think
-                            </Button>
+                            <Link to="/contact">
+                                <Button variant="primary" size="lg" rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}>
+                                    Start a Conversation
+                                </Button>
+                            </Link>
+                            <Link to="/methodology">
+                                <Button variant="secondary" size="lg">
+                                    See How We Think
+                                </Button>
+                            </Link>
                         </div>
                     </motion.div>
 
