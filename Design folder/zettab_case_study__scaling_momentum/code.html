@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZettaB Case Study: Scaling Momentum</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "primary-glow": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#111318",
+                        "surface-dark": "#1b1f27",
+                        "border-dark": "#282e39",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px -5px rgba(13, 89, 242, 0.5)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', "Noto Sans", sans-serif;
+            background-color: #111318;
+            color: white;
+        }
+        .architectural-line {
+            position: relative;
+        }
+        .architectural-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #282e39, transparent);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            opacity: 0.5;
+        }
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111318; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #282e39; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b4354; 
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 w-full border-b border-border-dark bg-[#111318]/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 lg:px-10">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg class="h-full w-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">ZettaB</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-gray-300 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Work</a>
+<a class="text-gray-300 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-gray-300 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Insights</a>
+<a class="text-gray-300 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-glow">
+<span class="truncate">Contact Us</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full border-b border-border-dark/50">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#111318] z-10 pointer-events-none"></div>
+<div class="mx-auto flex max-w-[1280px] flex-col px-4 py-12 md:py-20 lg:px-10">
+<div class="relative w-full overflow-hidden rounded-xl bg-surface-dark border border-border-dark aspect-[16/9] md:aspect-[21/9] group">
+<!-- Hero Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic digital dashboard visualization with glowing data streams on a dark background" style='background-image: linear-gradient(rgba(17, 19, 24, 0.3), rgba(17, 19, 24, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3DazCIuqFBJF41qvUdtrdcM0EEff0wKyn0ol853mIj-TsvBXwBPI4rd3lnodQj0DkxieVwue6eBZ0280CT3z0N8UsZlsFw0c88VSqkqdmdOe7D40zKMkNMafB5W8SL6CfhbY31eFwnjHgkIUv9mKzeVXkMtUcaFwnJ44kusyhC1d2xoahYVh5gCpfbS5xgA-utxt25s0FSf6RSRKgmK7bFiT4HUkL5R7XysMxC-JhO9lGfjna1AiongxNHOlx1hQgAbCSN7Ap7AuA");'>
+</div>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12">
+<div class="max-w-4xl space-y-4">
+<div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 backdrop-blur-sm">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-primary">Case Study</span>
+</div>
+<h1 class="text-4xl font-black leading-tight tracking-[-0.03em] text-white md:text-5xl lg:text-7xl">
+                            Scaling for the Next<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">10 Million Users</span>
+</h1>
+<p class="max-w-2xl text-lg font-medium text-gray-300 md:text-xl">
+<span class="text-primary font-bold">Client: Fintech Global.</span> Transforming legacy infrastructure into a scalable, future-proof digital ecosystem.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- The Challenge Section -->
+<section class="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-20 lg:flex-row lg:gap-20 lg:px-10">
+<!-- Architectural Line -->
+<div class="absolute left-[30px] top-0 h-full w-px bg-border-dark hidden xl:block"></div>
+<!-- Left Column: Pain Point Cards -->
+<div class="flex flex-1 flex-col gap-4 lg:max-w-md xl:ml-12">
+<div class="group relative overflow-hidden rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-border-dark/50 text-white group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">timer_off</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-white">System Latency</h3>
+<p class="text-sm text-gray-400">High response times were degrading user experience during peak trading hours.</p>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-border-dark/50 text-white group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">domain_disabled</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-white">Monolithic Architecture</h3>
+<p class="text-sm text-gray-400">A rigid 10-year-old codebase was slowing down deployment cycles to a crawl.</p>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-border-dark/50 text-white group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">trending_down</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-white">Scalability Limits</h3>
+<p class="text-sm text-gray-400">Inability to auto-scale infrastructure resulted in frequent outages during market spikes.</p>
+</div>
+</div>
+<!-- Right Column: Narrative -->
+<div class="flex flex-1 flex-col justify-center">
+<h2 class="mb-6 text-3xl font-bold tracking-tight text-white md:text-4xl">The Challenge</h2>
+<div class="space-y-6 text-lg leading-relaxed text-gray-400">
+<p>
+                    Fintech Global was facing a critical bottleneck. Their monolithic architecture, once a robust foundation, had become a prison that stifled growth. As user acquisition soared past the 2 million mark, the system began to buckle under the pressure.
+                </p>
+<p>
+                    Business impact was severe: feature rollouts stagnated due to fear of breaking the build, and user retention numbers began to dip correlated directly with performance lag. They needed a radical overhaul—not just a patch, but a complete reimagining of their digital engineering strategy to handle the next tier of growth.
+                </p>
+<div class="pt-4">
+<div class="h-px w-20 bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Solution / Strategic Pivot -->
+<section class="border-y border-border-dark bg-[#0e1116]">
+<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10">
+<div class="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-bold tracking-tight text-white md:text-5xl">The Strategic Pivot</h2>
+<p class="mt-4 text-lg text-gray-400">Moving from a brittle monolith to a resilient, event-driven microservices ecosystem.</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-medium">
+<span class="material-symbols-outlined">architecture</span>
+<span>Architecture Diagram v2.0</span>
+</div>
+</div>
+<!-- Large Visual Container -->
+<div class="relative w-full overflow-hidden rounded-xl border border-border-dark bg-[#111318] shadow-2xl">
+<!-- Decorative grid background -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#282e39 1px, transparent 1px); background-size: 24px 24px;">
+</div>
+<div class="relative z-10 p-4 md:p-8">
+<!-- Solution Image -->
+<div class="aspect-[16/9] w-full rounded-lg bg-cover bg-center shadow-lg" data-alt="Complex technical architecture diagram showing microservices connected via API gateway and message queues" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0TYVlA_DHx5q33V3KjUJeZQQVf6I4eO7cXy50Gs2ztEKDAI2jbuRU1IZbOtK46SwKga7OitZ4w5aKbW1MBVCEWqx4Jnn8qcBKYbwsVfnLnXJzgR6kuY7281ZchwL-1p-_tNVWpHmWyIOLNtsPKAMmcOcSpkIwC8Op5LuT4JJF9gY3TdyR0072s8azewa_Ywb9RuTui11AUu7n6xIrdcQEoTl_Ols9xsJA8bsrZ4pYr7BSuDU9Ku6PEEd7WNfE2_4_aI9g88oDDOhw");'>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Deep Dive -->
+<section class="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-12 lg:px-10">
+<div class="lg:col-span-4">
+<h3 class="mb-6 text-2xl font-bold text-white">Technical Deep Dive</h3>
+<p class="text-gray-400 mb-8">
+                We re-engineered the core transaction engine using Go for high concurrency, while orchestrating the entire fleet on Kubernetes across multi-zone AWS clusters.
+            </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-1 text-primary">check_circle</span>
+<div>
+<strong class="block text-white">Microservices Migration</strong>
+<span class="text-sm text-gray-500">Decoupled 40+ distinct services.</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-1 text-primary">check_circle</span>
+<div>
+<strong class="block text-white">Event-Driven Design</strong>
+<span class="text-sm text-gray-500">Implemented Kafka for real-time data streaming.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-8">
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<!-- Tech Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-[#00ADD8]/10 text-[#00ADD8]">
+<span class="material-symbols-outlined">code</span> <!-- Placeholder for Go -->
+</div>
+<div>
+<h4 class="font-bold text-white">Golang</h4>
+<p class="text-xs text-gray-500 mt-1">Core Transaction Engine</p>
+</div>
+</div>
+<!-- Tech Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-[#326CE5]/10 text-[#326CE5]">
+<span class="material-symbols-outlined">deployed_code</span> <!-- Placeholder for K8s -->
+</div>
+<div>
+<h4 class="font-bold text-white">Kubernetes</h4>
+<p class="text-xs text-gray-500 mt-1">Container Orchestration</p>
+</div>
+</div>
+<!-- Tech Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-[#FF9900]/10 text-[#FF9900]">
+<span class="material-symbols-outlined">cloud</span> <!-- Placeholder for AWS -->
+</div>
+<div>
+<h4 class="font-bold text-white">AWS</h4>
+<p class="text-xs text-gray-500 mt-1">Infrastructure Provider</p>
+</div>
+</div>
+<!-- Tech Card 4 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-white/10 text-white">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<h4 class="font-bold text-white">Kafka</h4>
+<p class="text-xs text-gray-500 mt-1">Event Streaming</p>
+</div>
+</div>
+<!-- Tech Card 5 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-[#F24E1E]/10 text-[#F24E1E]">
+<span class="material-symbols-outlined">draw</span>
+</div>
+<div>
+<h4 class="font-bold text-white">Figma</h4>
+<p class="text-xs text-gray-500 mt-1">Design System</p>
+</div>
+</div>
+<!-- Tech Card 6 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-hover hover:bg-[#222733]">
+<div class="flex size-10 items-center justify-center rounded bg-[#61DAFB]/10 text-[#61DAFB]">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<div>
+<h4 class="font-bold text-white">React</h4>
+<p class="text-xs text-gray-500 mt-1">Frontend Framework</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tangible Outcomes -->
+<section class="relative overflow-hidden border-t border-border-dark bg-surface-dark py-24">
+<!-- Glow effects -->
+<div class="absolute left-1/4 top-0 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/20 blur-[100px]"></div>
+<div class="relative mx-auto max-w-[1280px] px-6 lg:px-10">
+<h2 class="mb-16 text-center text-sm font-bold uppercase tracking-widest text-gray-500">Business Impact</h2>
+<div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+<div class="text-center">
+<div class="mb-2 text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+                        40%
+                    </div>
+<div class="text-lg font-medium text-primary">Reduction in Infra Cost</div>
+<p class="mt-2 text-sm text-gray-500">Optimized resource allocation via auto-scaling.</p>
+</div>
+<div class="text-center">
+<div class="mb-2 text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400 drop-shadow-[0_0_15px_rgba(13,89,242,0.4)]">
+                        2x
+                    </div>
+<div class="text-lg font-medium text-primary">Faster Load Times</div>
+<p class="mt-2 text-sm text-gray-500">Global content delivery under 100ms.</p>
+</div>
+<div class="text-center">
+<div class="mb-2 text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+                        Zero
+                    </div>
+<div class="text-lg font-medium text-primary">Downtime Migration</div>
+<p class="mt-2 text-sm text-gray-500">Seamless transition for 10M+ users.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Client Testimonial -->
+<section class="py-24 px-6 lg:px-10">
+<div class="mx-auto max-w-4xl">
+<div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-10 backdrop-blur-md shadow-glass md:p-16">
+<div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined mb-8 text-5xl text-primary/50">format_quote</span>
+<blockquote class="mb-8 text-2xl font-medium leading-relaxed text-white md:text-3xl">
+                        "ZettaB didn't just code; they re-engineered our future. The new architecture isn't just faster—it's a competitive advantage that lets us innovate at the speed of the market."
+                    </blockquote>
+<div class="flex items-center gap-4">
+<div class="size-12 overflow-hidden rounded-full bg-gray-700" data-alt="Portrait of Marcus Thorne, CTO" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB49SNlrH7plihX43Fcr7xcRyYdTKE4PFJMrSciTVsWjTvt5LOys7atbPRr2L_jAcFFHMap2YY0RQ7kLAgE2TTrhVUNK2SHf3joMVoTwe3a6mPwZMX2boRHhc76QOFCXfcGWyILVu1A-8KPSMNkF0jGSQJuDEWp8AJXLwWOGq1mYFmiNNLtcMi6gSBv7tVRh0VRa1ZwxUKj5q_M1UCNhNBX49jbBxJFKgweQz-Jy7x8ivnAmYp6KTYRejmGSF6Cv9VDZfBNm04W_n-k"); background-size: cover;'></div>
+<div class="text-left">
+<div class="font-bold text-white">Marcus Thorne</div>
+<div class="text-sm text-gray-400">CTO, Fintech Global</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Step CTA / Footer -->
+<footer class="border-t border-border-dark bg-[#0b0d11]">
+<div class="mx-auto flex max-w-[1280px] flex-col items-center px-6 py-24 text-center">
+<h2 class="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl">Ready to engineer your own momentum?</h2>
+<p class="mb-10 max-w-xl text-lg text-gray-400">Join the world's leading brands in building scalable, resilient digital products with ZettaB.</p>
+<button class="group relative flex h-14 min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-8 text-base font-bold text-white shadow-glow transition-all hover:scale-105 hover:bg-primary/90">
+<span class="relative z-10 flex items-center gap-2">
+                    Start Your Project
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+</button>
+<div class="mt-20 flex w-full flex-col justify-between gap-6 border-t border-border-dark pt-8 md:flex-row md:items-center">
+<div class="flex items-center gap-2 text-white">
+<div class="size-5 text-primary">
+<svg class="h-full w-full" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="font-bold">ZettaB</span>
+</div>
+<div class="flex gap-6 text-sm text-gray-500">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="text-sm text-gray-500">
+                    © 2024 ZettaB Inc.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

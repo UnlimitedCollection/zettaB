@@ -1,0 +1,51 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modalCard {
+    width: 100%;
+    max-width: 32rem;
+    background-color: var(--pk-color-surface-card);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 0;
+    color: var(--pk-color-text-white);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.content {
+    padding: 1.5rem;
+    color: var(--pk-color-text-secondary);
+}
+
+.closeBtn {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 !important;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

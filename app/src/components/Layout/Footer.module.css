@@ -1,0 +1,145 @@
+.footer {
+    background-color: var(--pk-color-surface-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 5rem 0 2.5rem;
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--pk-color-primary), #60a5fa);
+    border-radius: var(--pk-radius-lg);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(19, 91, 236, 0.2);
+}
+
+.logoText {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    color: var(--pk-color-text-secondary);
+    line-height: 1.6;
+}
+
+.colTitle {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linkList a {
+    color: var(--pk-color-text-secondary);
+    font-size: 0.875rem;
+    transition: color 200ms;
+}
+
+.linkList a:hover {
+    color: white;
+}
+
+.text {
+    color: var(--pk-color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.emailInput {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 0;
+    color: white;
+    font-family: inherit;
+    width: 100%;
+}
+
+.emailInput:focus {
+    outline: none;
+    border-bottom-color: var(--pk-color-primary);
+}
+
+.subBtn {
+    text-align: left;
+    color: var(--pk-color-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.subBtn:hover {
+    color: white;
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom p {
+    color: var(--pk-color-text-secondary);
+    font-size: 0.75rem;
+}

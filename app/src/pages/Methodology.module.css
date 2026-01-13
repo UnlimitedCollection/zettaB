@@ -1,0 +1,461 @@
+.pageWrapper {
+    background-color: var(--pk-color-background-dark);
+    min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.heroBeam {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% -20%, rgba(19, 91, 236, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.heroTag {
+    color: var(--pk-color-primary);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .heroTitle {
+        font-size: 5rem;
+    }
+}
+
+.serifItalic {
+    font-family: serif;
+    /* fallback */
+    font-style: italic;
+    font-weight: 400;
+    color: #d1d5db;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.gradientText {
+    background: linear-gradient(to right, white, #9ca3af);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroDesc {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    font-weight: 300;
+    max-width: 42rem;
+    line-height: 1.6;
+}
+
+.heroDivider {
+    width: 1px;
+    height: 4rem;
+    background: linear-gradient(to bottom, var(--pk-color-primary), transparent);
+    margin-top: 2rem;
+}
+
+/* Framework Header */
+.frameworkHeader {
+    padding: 8rem 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(40, 46, 57, 1);
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .frameworkHeader {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.fhTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.fhDesc {
+    color: #9ca3af;
+    max-width: 28rem;
+}
+
+.fhSteps {
+    display: flex;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-family: monospace;
+    font-size: 0.875rem;
+}
+
+/* Stages Grid */
+.stagesSection {
+    padding: 0 1.5rem 8rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.connectorLine {
+    display: none;
+    position: absolute;
+    top: 110px;
+    left: 2rem;
+    right: 2rem;
+    height: 1px;
+    background: linear-gradient(to right, #282e39, rgba(13, 91, 236, 0.5), #282e39);
+    z-index: 0;
+}
+
+@media (min-width: 1024px) {
+    .connectorLine {
+        display: block;
+    }
+}
+
+.stagesGrid {
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .stagesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stagesGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.stageCardWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.stageMarker {
+    display: none;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .stageMarker {
+        display: flex;
+    }
+}
+
+.markerDot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--pk-color-background-dark);
+    border: 1px solid #4b5563;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    transition: all 300ms;
+}
+
+/* Moved hover logic to JS or simple parent hover */
+
+.stageCardWrapper:hover .markerDot {
+    background-color: var(--pk-color-primary);
+    border-color: var(--pk-color-primary);
+    box-shadow: 0 0 10px rgba(13, 91, 236, 0.8);
+}
+
+.stageCard {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--pk-radius-xl);
+    padding: 1.5rem;
+    flex: 1;
+    transition: transform 300ms, border-color 300ms;
+    border-top: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.stageCardWrapper:hover .stageCard {
+    transform: translateY(-8px);
+    border-top-color: var(--pk-color-primary);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.stepNumber {
+    font-size: 2.25rem;
+    font-family: serif;
+    font-style: italic;
+    color: #374151;
+    transition: color 300ms;
+}
+
+.stageCardWrapper:hover .stepNumber {
+    color: rgba(13, 91, 236, 0.4);
+}
+
+.stepIcon {
+    color: #9ca3af;
+    transition: color 300ms;
+}
+
+.stageCardWrapper:hover .stepIcon {
+    color: white;
+}
+
+.stageTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.stageDesc {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.stageList {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.listItem {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.checkIcon {
+    color: var(--pk-color-primary);
+    font-size: 1.25rem;
+    margin-top: 0.1rem;
+}
+
+.itemHeading {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: block;
+}
+
+.itemSub {
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Why It Works */
+.whySection {
+    padding: 8rem 1.5rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(40, 46, 57, 0.5);
+}
+
+.whyGrid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .whyGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+.whyLabel {
+    color: var(--pk-color-primary);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.whyTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.whyDesc {
+    color: #9ca3af;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.statGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.statVal {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.visualContainer {
+    position: relative;
+    height: 30rem;
+    background-color: #1c1f27;
+    border-radius: var(--pk-radius-lg);
+    border: 1px solid rgba(40, 46, 57, 1);
+    overflow: hidden;
+}
+
+.visualOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, #111318, transparent);
+    z-index: 10;
+}
+
+.visualContent {
+    position: relative;
+    z-index: 20;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.processGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 24rem;
+}
+
+.processItem {
+    background: rgba(40, 46, 57, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8rem;
+    backdrop-filter: blur(4px);
+}
+
+.processItemHighlight {
+    background: rgba(19, 91, 236, 0.2);
+    border-color: rgba(19, 91, 236, 0.2);
+    transform: translateY(2rem);
+}
+
+.processIcon {
+    font-size: 2rem;
+    color: rgba(13, 91, 236, 0.7);
+}
+
+.processLine {
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    width: 60%;
+}
+
+.processLineLong {
+    width: 80%;
+}
+
+/* Footer */
+.footerSection {
+    border-top: 1px solid rgba(40, 46, 57, 1);
+    background-color: #0d0f14;
+    padding: 8rem 1.5rem;
+    text-align: center;
+}
+
+.footerTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.footerText {
+    color: #9ca3af;
+    font-size: 1.125rem;
+    max-width: 36rem;
+    margin: 0 auto 3rem;
+}

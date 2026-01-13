@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZettaB - Premium Digital Engineering Partner</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#1d6bf5",
+                        "primary-dark": "#0e45b5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0B0D12",
+                        "surface-dark": "#15181E",
+                        "surface-card": "#1A1D24",
+                        "text-secondary": "#9da6b9",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at center, rgba(19, 91, 236, 0.15) 0%, rgba(11, 13, 18, 0) 70%)',
+                        'card-gradient': 'linear-gradient(180deg, rgba(26, 29, 36, 1) 0%, rgba(21, 24, 30, 1) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0D12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #282e39;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b4354;
+        }
+
+        /* Subtle Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 bg-gradient-to-br from-primary to-blue-400 rounded-lg text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">ZettaB</h2>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Capabilities</a>
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Work</a>
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Approach</a>
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Insights</a>
+</nav>
+<!-- CTA -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex bg-white/5 hover:bg-white/10 text-white border border-white/10 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200">
+                    Client Login
+                </button>
+<button class="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                    Contact Us
+                </button>
+</div>
+</div>
+</header>
+<!-- Narrative Hero Section -->
+<section class="relative min-h-screen w-full flex items-center pt-20 overflow-hidden">
+<!-- Abstract Background -->
+<div class="absolute inset-0 bg-background-dark z-0">
+<!-- Glow Center -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+<!-- Grid overlay -->
+<div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+<!-- Decorative abstract flow lines (simulated with CSS for performance) -->
+<div class="absolute right-0 top-1/4 w-[600px] h-[600px] bg-gradient-to-l from-primary/5 to-transparent rounded-full blur-[80px] animate-pulse-glow"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+<span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Accepting New Partnerships</span>
+</div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-400">
+                    We Don’t Just Build Software. We Engineer <span class="text-primary">Business Momentum.</span>
+</h1>
+<p class="text-lg md:text-xl text-text-secondary font-light leading-relaxed max-w-xl">
+                    Premium digital engineering for ambitious companies ready to scale. We bridge the gap between visionary strategy and flawless execution.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="group flex items-center justify-center h-14 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold rounded-lg transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5">
+                        Start a Conversation
+                        <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center h-14 px-8 bg-surface-card hover:bg-white/10 text-white border border-white/10 text-base font-bold rounded-lg transition-all hover:-translate-y-0.5">
+                        See How We Think
+                    </button>
+</div>
+</div>
+<!-- Abstract Visual Representation -->
+<div class="relative hidden lg:block h-[600px] w-full" data-alt="Abstract 3D digital network structure glowing blue on dark background">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative w-full h-full">
+<!-- Simulated network nodes -->
+<div class="absolute top-[20%] right-[10%] p-4 bg-surface-card/80 backdrop-blur border border-white/10 rounded-xl shadow-2xl animate-float" style="animation-delay: 0s;">
+<span class="material-symbols-outlined text-primary text-3xl">code_blocks</span>
+</div>
+<div class="absolute bottom-[30%] left-[10%] p-4 bg-surface-card/80 backdrop-blur border border-white/10 rounded-xl shadow-2xl animate-float" style="animation-delay: 2s;">
+<span class="material-symbols-outlined text-purple-400 text-3xl">analytics</span>
+</div>
+<div class="absolute top-[40%] left-[40%] p-6 bg-surface-card/90 backdrop-blur border border-primary/30 rounded-2xl shadow-2xl shadow-primary/20 animate-float" style="animation-delay: 1s; z-index: 10;">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+</div>
+<div class="space-y-2 w-48">
+<div class="h-2 bg-white/10 rounded w-full"></div>
+<div class="h-2 bg-white/10 rounded w-3/4"></div>
+<div class="h-2 bg-primary/40 rounded w-1/2 mt-2"></div>
+</div>
+</div>
+<!-- Connecting Lines (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" viewbox="0 0 600 600">
+<path d="M100,400 Q250,300 400,200" fill="none" stroke="url(#lineGradient)" stroke-dasharray="5,5" stroke-width="2"></path>
+<path d="M300,300 L500,150" fill="none" stroke="url(#lineGradient)" stroke-width="1"></path>
+<defs>
+<lineargradient id="lineGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#135bec" stop-opacity="0"></stop>
+<stop offset="50%" stop-color="#135bec" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#135bec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+<span class="text-xs uppercase tracking-widest text-text-secondary">Scroll</span>
+<span class="material-symbols-outlined text-white">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Problem Awareness Section -->
+<section class="py-24 bg-surface-dark relative border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row gap-12 mb-16 items-start">
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">The Old Way is <span class="text-red-400">Broken</span>.</h2>
+<p class="text-text-secondary text-lg leading-relaxed">
+                        In today's hyper-competitive landscape, off-the-shelf solutions and fragmented teams create bottlenecks that stifle growth. You need a partner that sees the whole picture.
+                    </p>
+</div>
+<div class="md:w-1/2 flex items-end justify-end">
+<div class="h-[1px] bg-white/10 w-full my-auto"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pain Point 1 -->
+<div class="group p-8 rounded-2xl bg-surface-card border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors text-2xl">link_off</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Fragmented Software</h3>
+<p class="text-text-secondary text-sm leading-relaxed">
+                        Disconnected systems create data silos, forcing manual workarounds and leading to critical information loss between departments.
+                    </p>
+</div>
+<!-- Pain Point 2 -->
+<div class="group p-8 rounded-2xl bg-surface-card border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors text-2xl">trending_down</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Scalability Issues</h3>
+<p class="text-text-secondary text-sm leading-relaxed">
+                        Rigid legacy architecture that crumbles under high user load, resulting in downtime during critical growth spurts.
+                    </p>
+</div>
+<!-- Pain Point 3 -->
+<div class="group p-8 rounded-2xl bg-surface-card border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors text-2xl">speed</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Slow Velocity</h3>
+<p class="text-text-secondary text-sm leading-relaxed">
+                        Bloated engineering cycles that lag behind market demands, causing you to miss opportunities while competitors iterate faster.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ZettaB Positioning Section -->
+<section class="py-32 relative overflow-hidden bg-background-dark">
+<!-- Background Gradient -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface-dark to-background-dark pointer-events-none"></div>
+<div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-sm mb-8">
+<span class="material-symbols-outlined text-base">verified</span>
+                The ZettaB Difference
+            </div>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                ZettaB Is Your <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Technical Growth Partner</span>
+</h2>
+<p class="text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl mx-auto">
+                We are not a dev shop. We are a strategic engineering firm. We blend high-level business strategy, world-class design, and precision engineering to solve your most complex problems.
+            </p>
+<div class="flex justify-center">
+<div class="p-1 rounded-xl bg-gradient-to-b from-white/10 to-transparent">
+<div class="bg-surface-card/50 backdrop-blur rounded-lg p-6 border border-white/5">
+<div class="flex gap-8 md:gap-16 text-left">
+<div>
+<div class="text-3xl font-bold text-white mb-1">Strategy</div>
+<div class="text-sm text-text-secondary uppercase tracking-wider">Foundation</div>
+</div>
+<div class="flex items-center text-white/20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<div>
+<div class="text-3xl font-bold text-white mb-1">Design</div>
+<div class="text-sm text-text-secondary uppercase tracking-wider">Experience</div>
+</div>
+<div class="flex items-center text-white/20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<div>
+<div class="text-3xl font-bold text-white mb-1">Eng</div>
+<div class="text-sm text-text-secondary uppercase tracking-wider">Execution</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Capability Ecosystem -->
+<section class="py-24 bg-surface-dark border-y border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16">
+<h2 class="text-3xl font-bold mb-4">Capability Ecosystem</h2>
+<p class="text-text-secondary max-w-xl">An integrated approach to digital transformation. We don't just write code; we build systems that thrive.</p>
+</div>
+<!-- Ecosystem Grid/Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Card 1: Strategy -->
+<div class="group relative p-8 bg-background-dark rounded-2xl border border-white/5 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-surface-card border border-white/10 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Strategy &amp; Consulting</h3>
+<p class="text-text-secondary text-sm mb-6">Aligning technology investments with tangible business goals to ensure ROI from day one.</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> Digital Transformation
+                            </li>
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> Tech Stack Audits
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Card 2: UI/UX -->
+<div class="group relative p-8 bg-background-dark rounded-2xl border border-white/5 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-surface-card border border-white/10 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-purple-400 text-3xl">brush</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">UI/UX Design</h3>
+<p class="text-text-secondary text-sm mb-6">Crafting intuitive, premium user experiences that convert visitors into loyal advocates.</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-purple-400 rounded-full"></span> Product Design
+                            </li>
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-purple-400 rounded-full"></span> Design Systems
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Card 3: Engineering -->
+<div class="group relative p-8 bg-background-dark rounded-2xl border border-white/5 overflow-hidden md:col-span-2 lg:col-span-1">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-surface-card border border-white/10 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-blue-400 text-3xl">terminal</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Web &amp; Mobile Engineering</h3>
+<p class="text-text-secondary text-sm mb-6">Building robust, scalable applications using cutting-edge frameworks and clean code.</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-blue-400 rounded-full"></span> Full Stack Development
+                            </li>
+<li class="flex items-center text-sm text-white/60 gap-2">
+<span class="w-1 h-1 bg-blue-400 rounded-full"></span> Native &amp; Cross-Platform
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Card 4: Cloud -->
+<div class="group relative p-8 bg-background-dark rounded-2xl border border-white/5 overflow-hidden lg:col-span-1">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-surface-card border border-white/10 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">cloud_upload</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Cloud &amp; DevOps</h3>
+<p class="text-text-secondary text-sm mb-6">Automating infrastructure for reliability, security, and infinite scalability.</p>
+</div>
+</div>
+<!-- Card 5: Growth -->
+<div class="group relative p-8 bg-background-dark rounded-2xl border border-white/5 overflow-hidden md:col-span-2">
+<div class="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1">
+<div class="w-14 h-14 rounded-full bg-surface-card border border-white/10 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-emerald-400 text-3xl">monitoring</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Growth &amp; Optimization</h3>
+<p class="text-text-secondary text-sm">Data-driven iteration for maximum ROI. We analyze user behavior to constantly improve performance.</p>
+</div>
+<div class="hidden md:flex flex-1 h-full items-center justify-center bg-surface-card/30 rounded-lg p-4 w-full">
+<!-- Mini chart visualization -->
+<div class="flex items-end gap-2 h-24 w-full">
+<div class="w-full bg-emerald-400/20 rounded-t-sm h-[30%] animate-pulse"></div>
+<div class="w-full bg-emerald-400/40 rounded-t-sm h-[50%] animate-pulse" style="animation-delay: 0.1s"></div>
+<div class="w-full bg-emerald-400/60 rounded-t-sm h-[40%] animate-pulse" style="animation-delay: 0.2s"></div>
+<div class="w-full bg-emerald-400/80 rounded-t-sm h-[70%] animate-pulse" style="animation-delay: 0.3s"></div>
+<div class="w-full bg-emerald-400 rounded-t-sm h-[90%] animate-pulse" style="animation-delay: 0.4s"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section (Data Driven) -->
+<section class="py-24 bg-background-dark relative">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="text-4xl font-bold leading-tight">Engineered for <br/> <span class="text-primary">Longevity</span></h2>
+<p class="text-text-secondary text-lg">
+                    We don't just launch and leave. We build partnerships that last. Our agile methodology and transparent communication ensure you are always in control.
+                </p>
+<div class="flex gap-4">
+<button class="text-white border-b border-primary pb-1 hover:text-primary transition-colors text-sm font-bold flex items-center gap-2">
+                        Read Case Studies <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-card p-6 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center h-40">
+<div class="text-4xl font-bold text-white mb-2">10+</div>
+<div class="text-xs text-text-secondary uppercase tracking-widest">Years Experience</div>
+</div>
+<div class="bg-surface-card p-6 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center h-40">
+<div class="text-4xl font-bold text-white mb-2">98%</div>
+<div class="text-xs text-text-secondary uppercase tracking-widest">Client Retention</div>
+</div>
+<div class="bg-surface-card p-6 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center h-40">
+<div class="text-4xl font-bold text-white mb-2">50+</div>
+<div class="text-xs text-text-secondary uppercase tracking-widest">Enterprise Launches</div>
+</div>
+<div class="bg-surface-card p-6 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center h-40 bg-gradient-to-br from-surface-card to-primary/10">
+<div class="text-4xl font-bold text-white mb-2">24/7</div>
+<div class="text-xs text-text-secondary uppercase tracking-widest">Support &amp; Monitor</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-dark border-t border-white/5 pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<!-- Brand -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 bg-gradient-to-br from-primary to-blue-400 rounded-lg text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">ZettaB</h2>
+</div>
+<p class="text-text-secondary text-sm leading-relaxed">
+                        Engineering business momentum through premium software solutions.
+                    </p>
+<div class="flex gap-4">
+<a class="text-white/40 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<!-- Links -->
+<div>
+<h3 class="text-white font-bold mb-6">Company</h3>
+<ul class="space-y-4">
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">About</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Careers</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Partners</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Legal</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div>
+<h3 class="text-white font-bold mb-6">Services</h3>
+<ul class="space-y-4">
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Strategy</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Product Design</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Engineering</a></li>
+<li><a class="text-text-secondary hover:text-white text-sm transition-colors" href="#">Cloud &amp; DevOps</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-white font-bold mb-6">Stay Updated</h3>
+<p class="text-text-secondary text-sm mb-4">Insights on technology and business momentum.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-transparent border-b border-white/20 py-2 text-white placeholder-white/20 focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Email Address" type="email"/>
+<button class="text-left text-primary text-sm font-bold mt-2 hover:text-white transition-colors">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-text-secondary text-xs">© 2024 ZettaB Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-text-secondary hover:text-white text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-text-secondary hover:text-white text-xs transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
