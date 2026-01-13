@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Layout } from './components/Layout/Layout';
 import { PageTransition } from './components/PageTransition';
+import { Work } from './pages/Work';
 import { Home } from './pages/Home';
 import { UIKit } from './pages/UIKit';
 import { Services } from './pages/Services';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
           <Route path="/services/web-development" element={<PageTransition><ServiceDetail /></PageTransition>} />
+          <Route path="/work" element={<PageTransition><Work /></PageTransition>} />
           <Route path="/work/scaling-momentum" element={<PageTransition><CaseStudyPage /></PageTransition>} />
           <Route path="/methodology" element={<PageTransition><Methodology /></PageTransition>} />
           <Route path="/insights" element={<PageTransition><StrategicInsights /></PageTransition>} />
