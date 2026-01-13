@@ -12,7 +12,8 @@ export const Home: React.FC = () => {
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.heroBg}>
-                    <div className={styles.glowCenter} />
+                    <div className={styles.glowPrimary} />
+                    <div className={styles.glowSecondary} />
                     <div className={styles.gridOverlay} />
                 </div>
 
