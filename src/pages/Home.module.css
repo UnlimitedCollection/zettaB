@@ -91,6 +91,15 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .heroContent {
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 .statusBadge {
@@ -165,6 +174,13 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1.5rem;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .heroActions {
+        justify-content: flex-start;
+    }
 }
 
 /* Hero Visual (Abstract Network) */
@@ -272,6 +288,7 @@
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -279,19 +296,34 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+        text-align: left;
     }
 }
 
 .headerContent {
     flex: 0 0 60%;
+    margin: 0 auto;
+    /* Center block */
+}
+
+@media (min-width: 768px) {
+    .headerContent {
+        margin: 0;
+    }
 }
 
 .sectionTitle {
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: 700;
     color: white;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .sectionTitle {
+        font-size: 2.75rem;
+    }
 }
 
 .accentRed {
@@ -718,6 +750,15 @@
 .trustContent {
     width: 100%;
     max-width: 48rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .trustContent {
+        text-align: left;
+        margin: 0;
+    }
 }
 
 .trustGrid {
