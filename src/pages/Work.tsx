@@ -36,7 +36,7 @@ const galleryItems: GalleryItem[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBobhx6-yxURCeYeslt1UJTuAMokN9tBCASTGk5P1pJtZdH6tCXpYmhUyYzaEhkVaCAmI4tAFED0VTM0FoIj0PXhDKE-2l7jmSExSLatzepKfpguIJbMj8o21svUgR6x7w2-MZLq_kA3qA2xzB16yNheb-H372X3gczlxX3xaJCvQM6fuzuKppd2ZdvFu_HtqtbjiHdHOUSGhkGFooVT1Z86FG786ki_HcH2G4GMSeLqxMJeOE0lyrxu3gxlgwtPVUtSTdLianR-RnJ',
         description: 'Modernizing a legacy monolith into a cloud-native microservices architecture for a Tier-1 bank.',
         aspectRatio: 'portrait',
-        link: '/work/nexus'
+        link: '/work/scaling-momentum'
     },
     {
         type: 'impact',
@@ -55,7 +55,7 @@ const galleryItems: GalleryItem[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1lot37JtzcwW_4f35mDYOMtybNYaYPPp9sRQoJvyEhChV2aWRYal1JfT-1Ju53WDvrR-fJsM9o8Bkk2JQ4uPb9dSwRVafgXk58z5NsypBe8Yw_mMWYspmJp4PlKdTW-y13FEuwyoG6iDgjNB-unFssrNlIxufTUbw2ZCAenoeRPhCTTiO1nt1ojkynAzKensPttfqvndTzjN16v5Ly6UQjo-dguv1AHnDIxYf6kknakd8IWo9X_aSVTu7Hfa4_IC93Pj_UXNma0xk',
         description: 'Scaling global infrastructure to support hyper-growth for a silicon valley unicorn.',
         aspectRatio: 'portrait',
-        link: '/work/aether'
+        link: '/work/scaling-momentum'
     },
     {
         type: 'project',
@@ -65,7 +65,7 @@ const galleryItems: GalleryItem[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMnSZNIeWjbol3byXOO3JJPBM33DiKlOfgyvuhvHW25wH8ujJe0UYJ5xqg7Qb1JgHibtMnvsJG8HmKPgmBdNXUcLsqUU5fnDwDj3EdWd8ooSLJMRaYd0AFz306F0d6XOMyzIoa9ob2BRJnYxxquDkOSsCsA9irPjMNt3oRdv50OjnM_Yd0yYmY8RDtt5Mj70ESi3qfLEhs6zgS52OaWAhNlfpFnoBE2x3x4aY7eXKIAl-_sNOHt5rOWpT_G_bre1AA8o96kB-5V9Cd',
         description: 'Next-gen fintech experience with sub-millisecond transaction processing.',
         aspectRatio: 'square',
-        link: '/work/orbit'
+        link: '/work/scaling-momentum'
     },
     {
         type: 'impact',
@@ -84,7 +84,7 @@ const galleryItems: GalleryItem[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlzgJmqOSDIC0DMuXIFBv1G6jSrfcDd9EWpAspUJcKE7HJ2Hvlw84l8rDwbWAi_ndacjIOwPy3MdhIgjrirebLqYEOUhIYLaXv8sI--Vs97iyWBd08B6rxABXNukCzI0rTQPgVUxgelIeQujlztyZP7EOD_r_I6aGwkhhg7xRZhD8_1zEhCPbr2U4DebSr_o3xx6vswf3e6zVEpXbyIdLN-ONPr_-347jljpdb7B-kfI5VfzxpfBZJxyI_asGomM5yfA40qYYXMPkJ',
         description: 'Reimagining the operating system for decentralized security protocols.',
         aspectRatio: 'portrait',
-        link: '/work/cipher'
+        link: '/work/scaling-momentum'
     },
     {
         type: 'impact',
@@ -103,7 +103,7 @@ const galleryItems: GalleryItem[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAaFUIhRWhrHYuuCYG4Ty7l2186sL8otmlrg2NBgLPpt4t6kqEPBNyEcot6DDfFEWRqo_-nnk9EYIgGgTk0ogj1omX8H0yZZEHvI5p3P-LRNBnJGUmydlwXGcLcdEpJkreDPwTQ4b9PmFuCKdA19UEGKrcbEnyKV7DpRwAu7NCbBlgqhiwpMX8t5aYRnpSmhZxKxT-wP0-5L21Ahx_rAIu3u-WOkLFtqioHIXWvJEVT19S8DDGh6eMBId_-e-Fiy78Rd_L_L18mEU2k',
         description: 'Real-time data visualization engine processing petabytes of market data daily.',
         aspectRatio: 'portrait',
-        link: '/work/lumina'
+        link: '/work/scaling-momentum'
     }
 ];
 

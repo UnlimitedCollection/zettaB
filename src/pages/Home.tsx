@@ -307,9 +307,11 @@ export const Home: React.FC = () => {
                         <p className={styles.sectionDesc} style={{ marginBottom: '2rem' }}>
                             We don't just launch and leave. We build partnerships that last. Our agile methodology and transparent communication ensure you are always in control.
                         </p>
-                        <Button variant="ghost" rightIcon={<span className="material-symbols-outlined">arrow_forward</span>} style={{ paddingLeft: 0, fontWeight: 700 }}>
-                            Read Case Studies
-                        </Button>
+                        <Link to="/work">
+                            <Button variant="ghost" rightIcon={<span className="material-symbols-outlined">arrow_forward</span>} style={{ paddingLeft: 0, fontWeight: 700 }}>
+                                Read Case Studies
+                            </Button>
+                        </Link>
                     </div>
 
                     <div className={styles.statsGrid}>
