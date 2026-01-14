@@ -72,10 +72,14 @@
 .filterContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* Center on desktop, left on mobile if scrolling needed */
+    justify-content: start;
+    /* Align start on mobile for scroll */
     gap: 1rem;
-    padding: 0 1.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
     height: 4rem;
     min-width: max-content;
 }
@@ -123,6 +127,7 @@
 .masonryGrid {
     column-count: 1;
     column-gap: 2rem;
+    width: 100%;
 }
 
 @media (min-width: 768px) {

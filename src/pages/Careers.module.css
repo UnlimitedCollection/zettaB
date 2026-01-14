@@ -286,7 +286,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     height: 400px;
     background-color: rgba(13, 89, 242, 0.05);
     border-radius: 50%;
