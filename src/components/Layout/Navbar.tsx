@@ -32,7 +32,6 @@ export const Navbar: React.FC = () => {
                 </nav>
 
                 <div className={styles.actions}>
-                    <Button variant="ghost" size="sm" className={styles.loginBtn}>Client Login</Button>
                     <Button variant="primary" size="sm">Contact Us</Button>
                 </div>
             </div>
