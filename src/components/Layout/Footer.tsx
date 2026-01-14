@@ -22,14 +22,14 @@ export const Footer: React.FC = () => {
                         <ul className={styles.linkList}>
                             <li><Link to="/">About</Link></li>
                             <li><Link to="/careers">Careers</Link></li>
-                            <li><Link to="/contact">Partners</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.linksCol}>
                         <h3 className={styles.colTitle}>Services</h3>
                         <ul className={styles.linkList}>
-                            <li><Link to="/process">Strategy</Link></li>
+                            <li><Link to="/methodology">Methodology</Link></li>
                             <li><Link to="/services">Product Design</Link></li>
                             <li><Link to="/services">Engineering</Link></li>
                         </ul>

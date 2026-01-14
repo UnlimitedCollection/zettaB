@@ -27,12 +27,14 @@ export const Navbar: React.FC = () => {
                 <nav className={styles.nav}>
                     <Link to="/services" className={styles.navLink}>Capabilities</Link>
                     <Link to="/work" className={styles.navLink}>Work</Link>
-                    <Link to="/process" className={styles.navLink}>Approach</Link>
+                    <Link to="/methodology" className={styles.navLink}>Approach</Link>
                     <Link to="/insights" className={styles.navLink}>Insights</Link>
                 </nav>
 
                 <div className={styles.actions}>
-                    <Button variant="primary" size="sm">Contact Us</Button>
+                    <Link to="/contact">
+                        <Button variant="primary" size="sm">Contact Us</Button>
+                    </Link>
                 </div>
             </div>
         </header>
