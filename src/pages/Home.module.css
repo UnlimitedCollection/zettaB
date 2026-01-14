@@ -690,9 +690,17 @@
 .trustSection {
     padding: 8rem 2rem;
     background-color: var(--pk-color-background-dark);
+    overflow: hidden;
+    /* Prevent marquee blowout */
+}
+
+.trustContent {
+    width: 100%;
+    max-width: 48rem;
 }
 
 .trustGrid {
+    width: 100%;
     max-width: 90rem;
     margin: 0 auto;
     display: grid;
@@ -708,8 +716,14 @@
 
 .statsGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .statCard {
