@@ -1,6 +1,8 @@
 .pageWrapper {
     background-color: var(--pk-color-background-dark);
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 /* Hero */
