@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
     return (
@@ -19,9 +20,9 @@ export const Footer: React.FC = () => {
                     <div className={styles.linksCol}>
                         <h3 className={styles.colTitle}>Company</h3>
                         <ul className={styles.linkList}>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Partners</a></li>
+                            <li><Link to="/contact">About</Link></li>
+                            <li><Link to="/careers">Careers</Link></li>
+                            <li><Link to="/contact">Partners</Link></li>
                         </ul>
                     </div>
 
