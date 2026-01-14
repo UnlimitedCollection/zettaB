@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
                     <div className={styles.linksCol}>
                         <h3 className={styles.colTitle}>Company</h3>
                         <ul className={styles.linkList}>
-                            <li><Link to="/contact">About</Link></li>
+                            <li><Link to="/">About</Link></li>
                             <li><Link to="/careers">Careers</Link></li>
                             <li><Link to="/contact">Partners</Link></li>
                         </ul>
@@ -29,9 +29,9 @@ export const Footer: React.FC = () => {
                     <div className={styles.linksCol}>
                         <h3 className={styles.colTitle}>Services</h3>
                         <ul className={styles.linkList}>
-                            <li><a href="#">Strategy</a></li>
-                            <li><a href="#">Product Design</a></li>
-                            <li><a href="#">Engineering</a></li>
+                            <li><Link to="/process">Strategy</Link></li>
+                            <li><Link to="/services">Product Design</Link></li>
+                            <li><Link to="/services">Engineering</Link></li>
                         </ul>
                     </div>
 
