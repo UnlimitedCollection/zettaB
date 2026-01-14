@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button';
 import styles from './Careers.module.css';
@@ -16,49 +15,29 @@ export const Careers: React.FC = () => {
                 <div className={styles.heroOverlay} />
 
                 <div className={styles.heroContent}>
-                    <motion.div
-                        className={styles.badge}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <div className={styles.badge}>
                         <span className={styles.pingDot}>
                             <span className={styles.pingAnimate} />
                             <span className={styles.dotSolid} />
                         </span>
                         Hiring exceptional engineers worldwide
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        className={styles.heroTitle}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                    >
+                    <h1 className={styles.heroTitle}>
                         Build the Future, <br />
                         <span className={styles.gradientText}>Not Just Projects</span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        className={styles.heroDesc}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
+                    <p className={styles.heroDesc}>
                         Join ZettaB and engineer the digital backbone of tomorrow. We don't just write code; we cultivate careers for the ambitious.
-                    </motion.p>
+                    </p>
 
-                    <motion.div
-                        className={styles.heroActions}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
+                    <div className={styles.heroActions}>
                         <Link to="/contact">
                             <Button variant="primary" style={{ padding: '0.875rem 2rem' }}>Apply Now</Button>
                         </Link>
                         <a href="#culture" className={styles.cultureBtn}>View Our Culture</a>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -79,14 +58,7 @@ export const Careers: React.FC = () => {
                         { title: 'Diversity of Projects', text: 'Work with global clients solving unique, high-scale engineering problems across fintech, healthcare, and AI.', icon: 'public' },
                         { title: 'Learning Culture', text: "Unlimited budget for upskilling, conferences, and certifications. If you're growing, ZettaB is growing.", icon: 'school' },
                     ].map((feature, idx) => (
-                        <motion.div
-                            key={idx}
-                            className={styles.glassCard}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        >
+                        <div key={idx} className={styles.glassCard}>
                             <div className={styles.iconBox}>
                                 <span className="material-symbols-outlined" style={{ fontSize: 28 }}>{feature.icon}</span>
                             </div>
@@ -94,7 +66,7 @@ export const Careers: React.FC = () => {
                                 <h4 className={styles.cardTitle}>{feature.title}</h4>
                                 <p className={styles.cardText}>{feature.text}</p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </section>
@@ -116,14 +88,7 @@ export const Careers: React.FC = () => {
                             { num: '03', title: 'Strategy', sub: 'Architect solutions and drive technical strategy.', list: ['Architecture', 'Client Advisory'] },
                             { num: '04', title: 'Visionary', sub: 'Define the future of tech at ZettaB.', list: ['CTO Office', 'Global Impact'] },
                         ].map((stage, idx) => (
-                            <motion.div
-                                key={idx}
-                                className={styles.glassCard}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                            >
+                            <div key={idx} className={styles.glassCard}>
                                 <div className={`${styles.stageNumber} ${stage.active ? styles.stageOne : ''}`}>{stage.num}</div>
                                 <h3 className={styles.cardTitle} style={{ fontSize: '1.125rem' }}>{stage.title}</h3>
                                 <p className={styles.cardText} style={{ fontSize: '0.875rem' }}>{stage.sub}</p>
@@ -135,7 +100,7 @@ export const Careers: React.FC = () => {
                                         </li>
                                     ))}
                                 </ul>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
