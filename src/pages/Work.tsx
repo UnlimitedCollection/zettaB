@@ -88,10 +88,7 @@ export const Work: React.FC = () => {
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
-                    <motion.div
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <div>
                         <div className={styles.badge}>Our Portfolio</div>
                         <h1 className={styles.title}>
                             Building the Future, <br />
@@ -100,7 +97,7 @@ export const Work: React.FC = () => {
                         <p className={styles.subtitle}>
                             A curated selection of our most impactful work across engineering, design, and strategy.
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -122,37 +119,28 @@ export const Work: React.FC = () => {
             {/* Projects Grid */}
             <section className={styles.gridSection}>
                 <div className={styles.grid}>
-                    <AnimatePresence mode='popLayout'>
-                        {filteredProjects.map((project) => (
-                            <motion.div
-                                key={project.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <SpotlightCard className={styles.projectCard}>
-                                    <div className={styles.imageWrapper}>
-                                        <img src={project.image} alt={project.title} className={styles.projectImage} />
-                                        <div className={styles.categoryTag}>{project.category}</div>
+                    {filteredProjects.map((project) => (
+                        <div key={project.id}>
+                            <SpotlightCard className={styles.projectCard}>
+                                <div className={styles.imageWrapper}>
+                                    <img src={project.image} alt={project.title} className={styles.projectImage} />
+                                    <div className={styles.categoryTag}>{project.category}</div>
+                                </div>
+                                <div className={styles.cardContent}>
+                                    <div className={styles.tags}>
+                                        {project.tags.map(tag => (
+                                            <span key={tag} className={styles.tag}>#{tag}</span>
+                                        ))}
                                     </div>
-                                    <div className={styles.cardContent}>
-                                        <div className={styles.tags}>
-                                            {project.tags.map(tag => (
-                                                <span key={tag} className={styles.tag}>#{tag}</span>
-                                            ))}
-                                        </div>
-                                        <h3 className={styles.projectTitle}>{project.title}</h3>
-                                        <p className={styles.projectDesc}>{project.description}</p>
-                                        <Link to={project.link} className={styles.link}>
-                                            View Case Study <span className="material-symbols-outlined">arrow_forward</span>
-                                        </Link>
-                                    </div>
-                                </SpotlightCard>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
+                                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                                    <p className={styles.projectDesc}>{project.description}</p>
+                                    <Link to={project.link} className={styles.link}>
+                                        View Case Study <span className="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                </div>
+                            </SpotlightCard>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>
